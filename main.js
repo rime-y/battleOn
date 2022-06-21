@@ -1,5 +1,13 @@
 
 
+const actions = {
+    attack: "at",
+    defend: "df",
+    run: "ra",
+    evasion: "ev",
+    special: "sp"
+}
+
 class Irregular{
     constructor(id, name, hp, stat1, stat2, stat3, stat4){
         this.id = id;
@@ -38,7 +46,71 @@ class Irregular{
     }
 }
 
-// 이능력자 등록
+class Ememy{
+    constructor(id, name, hp, stat1, stat2, stat3, stat4){
+        this.id = id;
+        this.name = name;
+        this.hp = hp;
+        this.stat1 = stat1;
+        this.stat2 = stat2;
+        this.stat3 = stat3;
+        this.stat4 = stat4;
+    }
+
+    hurt(damage){ // 피해값 계산
+        this.hp = this.hp - damage;
+        return this.hp;
+    }
+
+    hit(){ // 자신 피해값 반환
+        return this.stat1;
+    }
+    
+    isAlive(){ // 체력 확인
+        if(this.hp <= 0) {
+            this.hp = 0;
+            return false;
+        }
+        return true;
+    }
+}
+
+// 이능력자 데이터 입력
 
 
-// 
+// 이능력자 전투 진행 
+
+
+function fir_turn(fir, sec, action){
+    switch(action){
+        case actions.attack:
+            break;
+        case actions.defend:
+            break;
+        case actions.evasion:
+            break;
+        case actions.run:
+            break;
+        case actions.special:
+            break;
+    }
+}
+
+function sec_turn(fir, sec, action, preAction){
+    switch(action){
+        case actions.attack:
+            break;
+        case actions.defend:
+            break;
+        case actions.evasion:
+            break;
+        case actions.run:
+            break;
+        case actions.special:
+            break;
+    }
+}
+
+function one_turn(){
+    
+}
